@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+         crossorigin="anonymous"
+      />
+
+      <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+      <title>Hello, world!</title>
+   </head>
+   <body>
+      <h1>Cryptocurrency to other currencies converter</h1>
+      <hr>
+      <form action="/" method="POST">
+         <div class="form-group">
+            <div class="currency-wrapper left">
+               <input
+                  class="form-control"
+                  placeholder="enter cryptocurrency amount"
+                  name="first-amount"
+                  type="number"
+                  value="<%-firstAmount%>"/>
+               <select class="form-control" name="first-selected">
+                  <%- currenciesStringFirst %>
+               </select>
+            </div>
+            <div class="middle">
+               <span>=</span>
+            </div>
+            <div class="currency-wrapper right">
+               <input
+                  class="form-control"
+                  type="number"
+                  disabled="disabled"
+                  value="<%-secondAmount%>"
+               >
+               <select class="form-control" name="second-selected">
+                  <%- currenciesStringSecond %>
+               </select>
+            </div>
+         </div>
+         <button class="btn btn-primary" name="second-selected">
+            convert
+         </button>
+      </form>
+   </body>
+</html>
